@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o ChartJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+        <h1>AgroTech</h1>
+            <ul class="navbar">
+                <li>Home</li>
+                <li>Simulador</li>
+                <li><img src="assets/user_icon.png" alt="Icone de usuário"></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Div que será renderizada o gráfico -->
+    <div class="graphs">
+        <span>Estufa 1° - Soja</span>
+        <div class="container-chart">
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+            <div>
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    // setup
+
+    // vetor de "rótulos" do gráfico
+    const labels = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const labels2 = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ];
+
+    //Vetor de JSON com dados, metricas(dataset) e configurações do grafico
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [30, 29, 28, 25, 22, 23],
+        },
+        {
+            label: 'Umidade',
+            backgroundColor: 'rgb(48, 155, 191)',
+            borderColor: 'rgb(48, 155, 191)',
+            data: [80, 82, 80, 85, 80, 83],
+        }
+        ]
+    };
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [22, 24, 27, 23, 20, 18],
+        },
+        {
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(48, 155, 191)',
+            borderColor: 'rgb(48, 155, 191)',
+            data: [90, 89, 93, 87, 88, 82],
+        }
+        ]
+    };
+
+    // configuração do grafico, tipo do grafico, opções e declaração dos dados
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+    //FIM setup
+
+    //Renderização    
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+  //FIM Renderização
+</script>

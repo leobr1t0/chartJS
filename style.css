@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    background-image: linear-gradient(to bottom, #8BC6EC, #9599e2);
+    background-repeat: no-repeat;
+}
+
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.header {
+    background-color: transparent;
+    color: white;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .container span {
+    font-size: 32px;
+}
+
+.header .container ul li {
+    cursor: pointer;
+}
+
+.header .container ul li:hover {
+    color: black;
+}
+
+.header .container ul li img {
+    width: 35px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 600px;
+    align-items: center;
+}
+
+.graphs {
+    background-color: blanchedalmond;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: 589px;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 3px black;
+}
+
+.graphs span {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 85px;
+    font-weight: 900;
+}
+
+.graphs .container-chart {
+    display: flex;
+    align-items: center;
+}
+
+.graphs #myChart, #myChart2, #myChart3 {
+    position: relative; 
+    height:40vh; 
+    width:40vw;
+}
